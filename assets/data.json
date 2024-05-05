@@ -1,0 +1,86 @@
+[
+ {
+    "id": null,
+    "uuid": "a3f4b8c0-a35b-454b-b770-6813d75fa41d",
+    "node_type": {
+      "id": 1001,
+      "title": "کارمند",
+      "parent": null
+    },
+    "parent_id": "a4c29383-ab8b-4c8b-b135-577f2b0be329",
+    "entity": {
+      "uuid": "f479d067-5c7b-48c5-8df0-12545a373188",
+      "title": "مریم سبز آبادی",
+      "groups": [
+        "f6195ec9-0cda-40a7-9acd-924babf051f0",
+        "f6195ec9-0cda-40a7-9acd-924babf051f0"
+      ],
+      "image": null
+    },
+    "subtitle": "کارمند خدمات",
+    "description": "کارمند"
+  },
+  {
+    "id": null,
+    "uuid": "35f6a6fa-d2ac-4d92-a5ab-7a35b530effd",
+    "node_type": {
+      "id": 1001,
+      "title": "کارمند",
+      "parent": null
+    },
+    "parent_id": "a4c29383-ab8b-4c8b-b135-577f2b0be329",
+    "entity": {
+      "uuid": "1af492a7-3bd8-41b2-96ab-576dbbb1ea9a",
+      "title": "محمد عبدی",
+      "groups": [
+        "f6195ec9-0cda-40a7-9acd-924babf051f0",
+        "f6195ec9-0cda-40a7-9acd-924babf051f0"
+      ],
+      "image": null
+    },
+    "subtitle": "کارمند خدمات",
+    "description": "کارمند"
+  },
+  {
+    "id": null,
+    "uuid": "ef437059-1ece-40ff-a260-f1489a806497",
+    "node_type": {
+      "id": 1001,
+      "title": "کارمند",
+      "parent": null
+    },
+    "parent_id": "8b654885-9c6d-42d8-b589-abd097722183",
+    "entity": {
+      "uuid": "1fe1b1a4-948f-41b7-a76c-2eba029fbca9",
+      "title": "خدیجه زند",
+      "groups": [
+        "f6195ec9-0cda-40a7-9acd-924babf051f0",
+        "f6195ec9-0cda-40a7-9acd-924babf051f0"
+      ],
+      "image": null
+    },
+    "subtitle": "حسابدار",
+    "description": "کارشناس"
+  },
+  {
+    "id": null,
+    "uuid": "35d8e4a8-43a6-403a-a84d-de0a202b77fa",
+    "node_type": {
+      "id": 1001,
+      "title": "کارمند",
+      "parent": null
+    },
+    "parent_id": "be21509b-a02b-402d-b81f-e6e64b89be47",
+    "entity": {
+      "uuid": "52b7b7f1-3e4e-4ebd-8615-5d5018a2c7a8",
+      "title": "فاطمه جماعتی",
+      "groups": [
+        "f6195ec9-0cda-40a7-9acd-924babf051f0",
+        "f6195ec9-0cda-40a7-9acd-924babf051f0"
+      ],
+      "image": null
+    },
+    "subtitle": "برنامه نویس فرانت اند",
+    "description": "کارشناس"
+  }
+]
