@@ -117,51 +117,53 @@ class _MyHomePageState extends State<MyHomePage> {
                       String id_parent = data_testing[x]['uuid'];
                       List<String> myList = [];
                       myList.add(id_parent);
-                      recursive_function(myList, data_testing);
+                      List? listtwo = [];
 
-                      for (int x = 0; x < data_testing.length; x++) {
-                        if (id_parent == data_testing[x]['parent_id']) {
-                          print(
-                              ' childern parentid  description :${data_testing[x]['description']} , subtitle :${data_testing[x]['subtitle']} , title :${data_testing[x]['entity']['title']} , uuid :${data_testing[x]['uuid']} , parent_id :${data_testing[x]['parent_id']} ');
+                      recursive_function(myList, data_testing, listtwo);
 
-                          parent_id_list.add(data_testing[x]['uuid']);
-                          // parent_id_list[0].isEmpty
-                          //     ? parent_id_list.add(data_testing[x]['uuid'])
-                          //     : null;
-                        }
-                      }
+                      // for (int x = 0; x < data_testing.length; x++) {
+                      //   if (id_parent == data_testing[x]['parent_id']) {
+                      //     print(
+                      //         ' childern parentid  description :${data_testing[x]['description']} , subtitle :${data_testing[x]['subtitle']} , title :${data_testing[x]['entity']['title']} , uuid :${data_testing[x]['uuid']} , parent_id :${data_testing[x]['parent_id']} ');
+
+                      //     parent_id_list.add(data_testing[x]['uuid']);
+                      //     // parent_id_list[0].isEmpty
+                      //     //     ? parent_id_list.add(data_testing[x]['uuid'])
+                      //     //     : null;
+                      //   }
+                      // }
                     }
                   }
-                  print('j0${parent_id_list[0]}');
-                  print('j1${parent_id_list[1]}');
-                  print('length array${parent_id_list.length}');
-                  print('index array${arrayindex}');
-                  for (int y = 0; y <= data_testing.length; y++) {
-                    list_child = arrayindex;
-                    if (arrayindex <= parent_id_list.length) {
-                      print('object');
-                      if (parent_id_list.length > arrayindex &&
-                          parent_id_list[arrayindex] ==
-                              data_testing[y]['parent_id']) {
-                        print(
-                            'list child:${list_child},very child: ${data_testing[y]['description']} , subtitle :${data_testing[y]['subtitle']} , title :${data_testing[y]['entity']['title']} , uuid :${data_testing[y]['uuid']} , parent_id :${data_testing[y]['parent_id']} ');
-                        parent_id_list_two.add(data_testing[y]['uuid']);
-                      }
-                      print('done if if (parent_id_list[arrayindex');
-                      if (y >= data_testing.length - 1) {
-                        print('in if (y >= data_testing.length)');
-                        arrayindex++;
-                        print('parent_id_list_two${parent_id_list_two}');
-//                         if (parent_id_list_two.isNotEmpty) {
+                  // print('j0${parent_id_list[0]}');
+                  // print('j1${parent_id_list[1]}');
+                  // print('length array${parent_id_list.length}');
+                  // print('index array${arrayindex}');
+//                   for (int y = 0; y <= data_testing.length; y++) {
+//                     list_child = arrayindex;
+//                     if (arrayindex <= parent_id_list.length) {
+//                       print('object');
+//                       if (parent_id_list.length > arrayindex &&
+//                           parent_id_list[arrayindex] ==
+//                               data_testing[y]['parent_id']) {
+//                         print(
+//                             'list child:${list_child},very child: ${data_testing[y]['description']} , subtitle :${data_testing[y]['subtitle']} , title :${data_testing[y]['entity']['title']} , uuid :${data_testing[y]['uuid']} , parent_id :${data_testing[y]['parent_id']} ');
+//                         parent_id_list_two.add(data_testing[y]['uuid']);
+//                       }
+//                       print('done if if (parent_id_list[arrayindex');
+//                       if (y >= data_testing.length - 1) {
+//                         print('in if (y >= data_testing.length)');
+//                         arrayindex++;
+//                         print('parent_id_list_two${parent_id_list_two}');
+// //                         if (parent_id_list_two.isNotEmpty) {
 
-// parent_id_list=parent_id_list_two;
-// arrayindex=0;
-//                         }else{ y=y+64; }
-                        y = 0;
-                      }
-                    }
-                  }
-                  print('object   ${parent_id_list[0]}');
+// // parent_id_list=parent_id_list_two;
+// // arrayindex=0;
+// //                         }else{ y=y+64; }
+//                         y = 0;
+//                       }
+//                     }
+//                   }
+                  // print('object   ${parent_id_list[0]}');
                 },
                 child: Text('show data in console')),
           ],
@@ -171,10 +173,13 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-List recursive_function(List<dynamic> listUuid, List data_testing) {
+List recursive_function(
+    List<dynamic> listUuid, List data_testing, List listtwo) {
+      if(listUuid.isEmpty&&listtwo.isEmpty){
+        return [];
+      }
   print('list uuid $listUuid');
   int x = listUuid.length - 1;
-  List? listtwo = [];
   // int valuejson = 0 ;
   print('com to function$x');
   for (int valuejson = 0; valuejson < data_testing.length; valuejson++) {
@@ -190,15 +195,17 @@ List recursive_function(List<dynamic> listUuid, List data_testing) {
     }
   }
 
-  if (listUuid.length-1 <= 0) {
+  if (listUuid.length - 1 <= 0) {
     print('com to fiest if ');
-    print(listtwo);
     listUuid = List.of(listtwo);
-    return recursive_function(listUuid, data_testing);
+    print('uuidlist$listUuid');
+    listtwo =[];
+    return recursive_function(listUuid, data_testing, listtwo);
   } else {
     print('tree');
+    print('final list childern :$listtwo');
     listUuid.removeAt(listUuid.length - 1);
-    return recursive_function(listUuid, data_testing);
+    return recursive_function(listUuid, data_testing, listtwo);
   }
   // return listUuid;
 }
